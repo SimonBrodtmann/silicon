@@ -8,7 +8,7 @@ if mods["space-exploration"] then
   end
   se_delivery_cannon_recipes["silica"] = {name= "silica"}
   if mods["Krastorio2"] then
-    recipe = data.raw.recipe["silicon-vulcanite"]
+    local recipe = data.raw.recipe["silicon-vulcanite"]
     recipe.ingredients = {
       {"silica", 18},
       string.sub(mods["space-exploration"], 1, 3) == "0.6" and 
