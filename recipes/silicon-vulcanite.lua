@@ -8,16 +8,16 @@ if mods["space-exploration"] then
   end
   se_delivery_cannon_recipes["silica"] = {name= "silica"}
   if mods["Krastorio2"] then
-    local recipe = data.raw.recipe["silicon-vulcanite"]
+    local recipe = data.raw.recipe["se-kr-silicon-with-vulcanite"]
     recipe.ingredients = {
-      {"silica", 18},
+      {type="item", name="silica", amount=18},
       string.sub(mods["space-exploration"], 1, 3) == "0.6" and 
-      {type="fluid", name="se-pyroflux", amount=10} or {"se-vulcanite-block", 1},
+      {type="fluid", name="se-pyroflux", amount=10} or {type="item", name="se-vulcanite-block", amount=1},
     }
     recipe.category = "smelting" -- now uses pyroflux so can't be kiln in se 0.6
     recipe.energy_required=21.6
     recipe.results = {
-      {name = "silicon", amount = 6},
+      {type="item", name = "kr-silicon", amount = 6},
     }
     if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
       table.insert(recipe.ingredients, {"kr-coke", 1})
@@ -39,12 +39,12 @@ if mods["space-exploration"] then
       always_show_made_in = true,
       allow_as_intermediate = false,
       ingredients = {
-        {name = "silica", amount = 20},
+        {type="item", name = "silica", amount = 20},
         string.sub(mods["space-exploration"], 1, 3) == "0.6" and 
-        {type="fluid", name="se-pyroflux", amount=10} or {"se-vulcanite-block", 1},
+        {type="fluid", name="se-pyroflux", amount=10} or {type="item", name="se-vulcanite-block", amount=1},
       },
       results = {
-        {name = "silicon", amount = 3},
+        {type="item", name = "silicon", amount = 3},
       },
       icons = {
         { icon = "__bzsilicon__/graphics/icons/silicon.png", icon_size = 64, icon_mipmaps = 3 },
